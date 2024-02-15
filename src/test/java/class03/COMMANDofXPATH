@@ -1,0 +1,66 @@
+NAVIGATIONAL COMMAND
+driver.navigate.to(url)----------------------->Gets website
+driver.manage().window().maximize()----------->Maximize the Window
+
+driver.manage().window().fullscreen()---------->Fullscreen the Window
+
+driver.getTitle()------------------------------>Gets the Title of the Website
+
+driver.getCurrentUrl()------------------------>Gets the Current url of the Website
+
+driver.close() -------------------------------> Close the all windows (if more than 1 opened)
+
+driver.quit() --------------------------------> Quit the current window
+
+**TO NAVIGATE A WEBSITE THAT YOU WANT TO INSPECT**
+WebDriver driver=new ChromeDriver();
+driver.manage().window().maximize();
+
+driver.get("https://www.facebook.com/");
+
+
+image.png
+
+FIND ELEMENT BY XPATH ==>//Finding the username box on facebook and sending a Key//
+By using id;
+WebElement userName =driver.findElement(By.xpath("//input[@id='email']");
+userName.sendKeys("damla@gmail.com");   ==> send damla@gmail.com as a user name
+**CREATE CUSTOMIZE XPATH***
+
+By using starts-with;
+//input[starts-with(@id,'email')]                          ==>on id
+//input[starts-with(@class,'inp')]                        ==>on class
+//input[starts-with(@placeholder,'Email or')]     ==>on placeholder etc.
+WebElement userName =driver.findElement(By.xpath("//input[starts-with(@id,'email')] ")); ==> //Finding the input box of username on facebook
+userName.sendKeys("damla@gmail.com"); ==> send damla@gmail.com as a user name
+By using contains;
+WebElement userName =driver.findElement(By.xpath("//input[contains(@id,'emai')])] ")); ==> //  by Id
+userName.sendKeys("damla@gmail.com");   ==> send damla@gmail.com as a user name
+WebElement userName =driver.findElement(By.xpath("//input[contains(@type,'tex')])] ")); ==> //by type,by class etc.
+userName.sendKeys("damla@gmail.com");   ==> send damla@gmail.com as a user name
+
+
+62566623-437a-4d83-be2b-95c7c2f3e62b.png
+
+By using text();
+WebElement logInButton =driver.findElement(By.xpath("//button[text()='Log In']")); ==> // By Using text on a Button
+logInButton.click();  ==> click on Login Button
+image.png
+By using text();
+WebElement create= driver.findElement(By.xpath("//a[text()='Create new account']"));
+String textOfCreateButton=create.getText(); ===>get Text Message on create Button
+System.out.println(textOfCreateButton);     ===>Print Text Message on create Button on Console
+create.click();  ==> click on Create New Account Button
+
+
+
+
+FIND LINKS OF ELEMENT
+List<WebElement> allLinks= driver.findElements(By.tagName("a")); ===>a tagname contains Links ,to find a link search (By.tagName("a"))
+for(WebElement link:allLinks){   =============>Make a list of all Links
+String nameOfTheLinks=link.getText();=========>Get link names by getText();
+System.out.println(nameOfTheLinks);===========>Print name of the links
+String linkUrl= link.getAttribute("href");====>The getAttribute () method is a JavaScript method that returns the value of an attribute on a specified element
+System.out.println(linkUrl);
+
+

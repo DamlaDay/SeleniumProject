@@ -1,0 +1,21 @@
+
+
+
+Implicit waits:
+
+     It's a global wait.Once you declared you don't need to declare again
+     It's going to wait until the web element is found.
+
+       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));---waits until 20 sec
+
+
+       Explicit Waits;
+      Wait until certain condition is fullfiled
+
+       This condition would be :
+       Element is
+       .clickble
+       .visible
+       .hasText etc.
+
+       wait.until.Elementisvisible
